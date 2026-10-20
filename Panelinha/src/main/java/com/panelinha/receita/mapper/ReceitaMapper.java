@@ -9,6 +9,7 @@ import org.mapstruct.Mapper;
 public interface ReceitaMapper {
     Receita toEntity(ReceitaDto dto);
 
+
     ReceitaResponseDto toResponseDto(Receita receita);
 
 
