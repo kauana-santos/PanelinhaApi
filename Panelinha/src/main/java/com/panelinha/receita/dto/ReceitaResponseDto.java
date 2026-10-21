@@ -8,7 +8,9 @@ import java.util.List;
 public record ReceitaResponseDto(
         Long id,
         String titulo,
-        String descricao
+        String descricao,
+        List<IngredienteResponseDto> ingredientes,
+        List<ModoDePreparoResponseDto> modoDePreparo
 
 ) {
 }

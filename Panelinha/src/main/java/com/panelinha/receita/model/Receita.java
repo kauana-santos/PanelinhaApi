@@ -29,6 +29,6 @@ public class Receita {
     private List<Ingrediente> ingredientes = new ArrayList<>();
 
     @OneToMany(mappedBy = "receita", cascade = CascadeType.ALL)
-    @OrderColumn(name = "ordem")
+    @OrderBy("id ASC")
     private List<ModoDePreparo> modoDePreparo = new ArrayList<>();
 }
