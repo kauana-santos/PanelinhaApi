@@ -22,6 +22,9 @@ public class Receita {
     @Column( nullable = false)
     private String titulo;
 
+    @Column(nullable = false)
+    private String imageUrl;
+
     @Column( nullable = false)
     private String descricao;
 
