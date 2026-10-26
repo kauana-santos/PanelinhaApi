@@ -9,6 +9,7 @@ public record ReceitaResponseDto(
         Long id,
         String titulo,
         String descricao,
+        String imageUrl,
         List<IngredienteResponseDto> ingredientes,
         List<ModoDePreparoResponseDto> modoDePreparo
 

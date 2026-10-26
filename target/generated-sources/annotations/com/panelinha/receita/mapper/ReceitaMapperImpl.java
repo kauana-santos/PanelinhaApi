@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-10-21T11:25:34-0300",
+    date = "2026-10-26T08:49:39-0300",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.12.1 (Amazon.com Inc.)"
 )
 @Component
@@ -37,6 +37,7 @@ public class ReceitaMapperImpl implements ReceitaMapper {
         Receita receita = new Receita();
 
         receita.setTitulo( dto.titulo() );
+        receita.setImageUrl( dto.imageUrl() );
         receita.setDescricao( dto.descricao() );
 
         return receita;
@@ -51,16 +52,18 @@ public class ReceitaMapperImpl implements ReceitaMapper {
         Long id = null;
         String titulo = null;
         String descricao = null;
+        String imageUrl = null;
         List<IngredienteResponseDto> ingredientes = null;
         List<ModoDePreparoResponseDto> modoDePreparo = null;
 
         id = receita.getId();
         titulo = receita.getTitulo();
         descricao = receita.getDescricao();
+        imageUrl = receita.getImageUrl();
         ingredientes = ingredienteListToIngredienteResponseDtoList( receita.getIngredientes() );
         modoDePreparo = modoDePreparoListToModoDePreparoResponseDtoList( receita.getModoDePreparo() );
 
-        ReceitaResponseDto receitaResponseDto = new ReceitaResponseDto( id, titulo, descricao, ingredientes, modoDePreparo );
+        ReceitaResponseDto receitaResponseDto = new ReceitaResponseDto( id, titulo, descricao, imageUrl, ingredientes, modoDePreparo );
 
         return receitaResponseDto;
     }
